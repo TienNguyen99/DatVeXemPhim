@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c44ecb9dc734809b2bcb4248f3f17b9" Name="Diagram1">
+        <EntityTypeShape EntityType="BookingTicketModel.Admin" Width="1.5" PointX="8.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Booking" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Cinema" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Country" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Customer" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Feedback" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Film" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.ShowTime" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.Slide" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.sysdiagram" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookingTicketModel.TypeFilm" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="BookingTicketModel.FK_Booking_CusId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_Booking_ShoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_ShowTimes_CinId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_Film_CouId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_Feedback_FilId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_Film_TypId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_ShowTimes_FilId" ManuallyRouted="false" />
+        <AssociationConnector Association="BookingTicketModel.FK_Slide_FilId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
