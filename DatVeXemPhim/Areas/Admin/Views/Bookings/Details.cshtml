@@ -1,0 +1,67 @@
+﻿@model DatVeXemPhim.Areas.Admin.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bilmoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bilmoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateBooking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateBooking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowTime.ShoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowTime.ShoId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BooId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

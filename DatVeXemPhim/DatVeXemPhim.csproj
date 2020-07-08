@@ -170,149 +170,170 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CinemasController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CountriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShowTimesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlidesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TypeFilmsController.cs" />
+    <Compile Include="Areas\Admin\Models\Actor.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Models\Admin.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AdminModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AdminModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AdminModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AspNetRole.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AspNetUser.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AspNetUserClaim.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AspNetUserLogin.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Booking.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Cinema.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Country.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Customer.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\DatVeDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatVeDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\DatVeDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatVeDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\DatVeDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatVeDb.edmx</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Feedback.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Film.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\ShowTime.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Slide.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Admin_CheckLogin_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Admin_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Admin_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Booking_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Booking_GetByCusId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Booking_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Booking_GetByShoId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Cinema_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Cinema_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Country_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Country_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Customer_CheckLogin_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Customer_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Customer_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Feedback_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Feedback_GetByFilId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Feedback_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Film_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Film_GetByCouId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Film_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Film_GetByTypId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByCinId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByFilId_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Slide_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_Slide_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_TypeFilm_GetByAll_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sp_TypeFilm_GetById_Result.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sysdiagram.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\TypeFilm.cs">
-      <DependentUpon>DatVeDb.tt</DependentUpon>
+      <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -327,15 +348,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Models\DatVeDb.Context.tt">
+    <Content Include="Areas\Admin\Models\AdminModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatVeDb.edmx</DependentUpon>
-      <LastGenOutput>DatVeDb.Context.cs</LastGenOutput>
+      <DependentUpon>AdminModel.edmx</DependentUpon>
+      <LastGenOutput>AdminModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Admin\Models\DatVeDb.tt">
+    <Content Include="Areas\Admin\Models\AdminModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatVeDb.edmx</DependentUpon>
-      <LastGenOutput>DatVeDb.cs</LastGenOutput>
+      <DependentUpon>AdminModel.edmx</DependentUpon>
+      <LastGenOutput>AdminModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -348,19 +369,49 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\LoginAd\Index.cshtml" />
-    <EntityDeploy Include="Areas\Admin\Models\DatVeDb.edmx">
+    <Content Include="Areas\Admin\Views\HomeAd\Index.cshtml" />
+    <EntityDeploy Include="Areas\Admin\Models\AdminModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatVeDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdminModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Areas\Admin\Models\DatVeDb.edmx.diagram">
-      <DependentUpon>DatVeDb.edmx</DependentUpon>
+    <Content Include="Areas\Admin\Models\AdminModel.edmx.diagram">
+      <DependentUpon>AdminModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Cinemas\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Cinemas\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Cinemas\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Cinemas\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Cinemas\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slides\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slides\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Slides\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Slides\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slides\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\HomeAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeFilms\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeFilms\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeFilms\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeFilms\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TypeFilms\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Countries\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -381,8 +432,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -403,8 +452,7 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PhimDangChieu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -413,6 +461,8 @@
     <Folder Include="Assets\admin\js\" />
     <Folder Include="Assets\admin\scss\" />
     <Folder Include="Assets\admin\vendor\" />
+    <Folder Include="Assets\client\css\" />
+    <Folder Include="Assets\client\vendor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

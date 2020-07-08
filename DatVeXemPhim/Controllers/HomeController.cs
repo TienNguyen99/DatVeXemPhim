@@ -2,29 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DatVeXemPhim.Areas.Admin.Models;
 using System.Web.Mvc;
 
 namespace DatVeXemPhim.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
-            return View();
-        }
+            BookingTicketEntities1 db = new BookingTicketEntities1();
+            var data = (from d in db.Slides select d).ToList();
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(data);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DatVeXemPhim.Areas.Admin.Controllers
 {
     public class CustomersController : Controller
     {
-        private BookingTicketEntities db = new BookingTicketEntities();
+        private BookingTicketEntities1 db = new BookingTicketEntities1();
 
         // GET: Admin/Customers
         public ActionResult Index()

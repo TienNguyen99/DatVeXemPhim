@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Tạo mới người dùng", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -17,6 +17,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreditCard)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FullName)
@@ -29,6 +32,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avata)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
@@ -45,6 +54,9 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CreditCard)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
@@ -55,6 +67,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avata)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Status)
