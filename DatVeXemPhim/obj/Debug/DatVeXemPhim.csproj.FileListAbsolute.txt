@@ -135,3 +135,4 @@ D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\bin\Microsoft.Owin.Securit
 D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\obj\Debug\DatVeXemPhim.dll
 D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\obj\Debug\DatVeXemPhim.pdb
+D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\obj\Debug\DatVeXemPhim.csprojResolveAssemblyReference.cache

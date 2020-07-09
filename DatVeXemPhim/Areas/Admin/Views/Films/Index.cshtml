@@ -1,0 +1,88 @@
+﻿@model IEnumerable<DatVeXemPhim.Areas.Admin.Models.Film>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PictureBig)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country.NameCo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeFilm.NameT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Picture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PictureBig)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country.NameCo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeFilm.NameT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FilId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FilId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FilId })
+        </td>
+    </tr>
+}
+
+</table>

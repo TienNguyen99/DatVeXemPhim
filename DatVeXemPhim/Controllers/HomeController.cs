@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using DatVeXemPhim.Areas.Admin.Models;
 using System.Web.Mvc;
+using DatVeXemPhim.Dao;
 
 namespace DatVeXemPhim.Controllers
 {
@@ -12,10 +13,10 @@ namespace DatVeXemPhim.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            BookingTicketEntities1 db = new BookingTicketEntities1();
-            var data = (from d in db.Slides select d).ToList();
-
-            return View(data);
+            ViewBag.Slides = new SlideDao().ListAll();
+            var filmDao = new ProductDao();
+            ViewBag.NewFilms = filmDao.ListNewFilm();
+            return View();
         }
     }
 }

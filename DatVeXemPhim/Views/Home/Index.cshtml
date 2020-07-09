@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "N7 Cinema";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var slides = (List<DatVeXemPhim.Areas.Admin.Models.Slide>)ViewBag.Slides;
+    var listfilmdangchieu = (List<DatVeXemPhim.Areas.Admin.Models.Film>)ViewBag.NewFilms;
 }
 
 <div class="container">
@@ -12,11 +14,15 @@
 
             <h1 class="my-4">NHOM 7 CINEMA</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <a href="@Url.Action("Index", "Home")" class="list-group-item">Phim đang chiếu</a>
+                <a href="@Url.Action("Index", "Home")" class="list-group-item">Phim sắp chiếu</a>
+                <a href="@Url.Action("Index", "Home")" class="list-group-item">Rạp</a>
             </div>
-
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>
+            </div>
         </div>
         <!-- /.col-lg-3 -->
 
@@ -29,10 +35,13 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    @foreach (var item in Model)
-                    {
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="@Url.Content(item.Image)" alt="First slide">
+                    @{ int i = 0;}
+                    @foreach (var item in slides)
+                            {
+                                i++;
+                                var active = i == 1 ? "active" : "";
+                        <div class="carousel-item @active">
+                            <img class="d-block img-fluid" src="@Url.Content(item.Image)">
                         </div>
                     }
 
@@ -49,101 +58,40 @@
 
             <div class="row">
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item One</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <div class="container">
+                    <hr class="nav-divider">
+                    <nav class="navbar navbar-dark bg-dark">
+                        <a class="navbar-brand" href="#">Phim đang chiếu Hot</a>
+                    </nav>
+                    <hr class="nav-divider">
+                </div>
+                @foreach (var item in listfilmdangchieu)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="@item.Picture" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">@item.NameF</a>
+                                </h4>
+                                <h5>Đạo diễn :@item.Director   </h5>
+                                <h5>Diễn viên :@item.Actor   </h5>
+                                <h5>Thời lượng :@item.Duration   </h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
                         </div>
                     </div>
+                }
+                <div class="container">
+                    <hr class="nav-divider">
+                    <nav class="navbar navbar-dark bg-dark">
+                        <a class="navbar-brand" href="#">Phim sắp chiếu</a>
+                    </nav>
+                    <hr class="nav-divider">
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Two</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Three</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Four</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Five</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Six</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!-- /.row -->

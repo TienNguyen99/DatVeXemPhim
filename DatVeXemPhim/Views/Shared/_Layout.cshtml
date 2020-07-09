@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/Assets/client/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="/Assets/client/css/shop-homepage.css" rel="stylesheet">
 
@@ -29,6 +28,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm ..." aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                     <li class="nav-item active">
                         <a href="@Url.Action("Index", "Home")" class="nav-link">
                             Trang chủ
@@ -53,12 +56,10 @@
     @RenderBody()
     <!-- /.container -->
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; N7 Cinema Đồ án QLDA thầy Xuân</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="#"> Đồ án Công nghệ phần mềm </a>
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/Assets/client/vendor/jquery/jquery.min.js"></script>
