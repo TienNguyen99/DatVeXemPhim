@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\HK2-2020\QLDA\DatVeXemPhim\DatVeXemPhim\Areas\Admin\Models\AdminModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\HK2-2020\QLDA - Copy (2)\DatVeXemPhim\DatVeXemPhim\Areas\Admin\Models\AdminModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

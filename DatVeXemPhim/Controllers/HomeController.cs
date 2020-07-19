@@ -16,7 +16,10 @@ namespace DatVeXemPhim.Controllers
             ViewBag.Slides = new SlideDao().ListAll();
             var filmDao = new ProductDao();
             ViewBag.NewFilms = filmDao.ListNewFilm();
+            ViewBag.PhimSapChieu = filmDao.ListPhimSapChieu();
+            
             return View();
         }
+
     }
 }

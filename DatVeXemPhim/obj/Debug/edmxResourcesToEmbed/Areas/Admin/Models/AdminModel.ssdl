@@ -80,6 +80,7 @@
     <Property Name="ShoId" Type="int" />
     <Property Name="Quantity" Type="int" />
     <Property Name="Bilmoney" Type="float" />
+    <Property Name="ChoNgoi" Type="int" />
     <Property Name="DateBooking" Type="datetime" />
     <Property Name="Status" Type="varchar" MaxLength="100" />
   </EntityType>
@@ -94,6 +95,8 @@
     <Property Name="Phone" Type="varchar" MaxLength="20" />
     <Property Name="Image" Type="varchar" MaxLength="100" />
     <Property Name="Status" Type="int" />
+    <Property Name="ToaDo1" Type="varchar" MaxLength="200" />
+    <Property Name="ToaDo2" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -115,7 +118,7 @@
     <Property Name="Bod" Type="datetime" />
     <Property Name="Address" Type="varchar" MaxLength="200" />
     <Property Name="Phone" Type="varchar" MaxLength="20" />
-    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="Avata" Type="varchar" MaxLength="100" />
     <Property Name="Status" Type="int" />
   </EntityType>
@@ -142,10 +145,24 @@
     <Property Name="Director" Type="varchar" MaxLength="100" />
     <Property Name="Actor" Type="varchar" MaxLength="100" />
     <Property Name="Duration" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Description" Type="ntext" />
     <Property Name="Detail" Type="ntext" />
     <Property Name="Picture" Type="varchar" MaxLength="100" />
     <Property Name="PictureBig" Type="varchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CusID" Type="int" />
+    <Property Name="ShipName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipEmail" Type="nvarchar" MaxLength="50" />
     <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="ShowTimes">
@@ -340,378 +357,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_Admin_ChangePass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="Pass" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Admin_CheckLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="Pass" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Admin_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Admin_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="AdmId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Admin_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="AdmId" Type="int" Mode="In" />
-    <Parameter Name="FullName" Type="varchar" Mode="In" />
-    <Parameter Name="Bod" Type="datetime" Mode="In" />
-    <Parameter Name="Address" Type="varchar" Mode="In" />
-    <Parameter Name="Phone" Type="varchar" Mode="In" />
-    <Parameter Name="Email" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="BooId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Booking_GetByCusId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="BooId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_GetByShoId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-    <Parameter Name="Bilmoney" Type="float" Mode="In" />
-    <Parameter Name="Quantity" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_Sum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Booking_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="BooId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CinId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Cinema_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CinId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="NameCi" Type="varchar" Mode="In" />
-    <Parameter Name="Address" Type="varchar" Mode="In" />
-    <Parameter Name="Seats" Type="int" Mode="In" />
-    <Parameter Name="Phone" Type="varchar" Mode="In" />
-    <Parameter Name="Image" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CinId" Type="int" Mode="In" />
-    <Parameter Name="NameCi" Type="varchar" Mode="In" />
-    <Parameter Name="Address" Type="varchar" Mode="In" />
-    <Parameter Name="Seats" Type="int" Mode="In" />
-    <Parameter Name="Phone" Type="varchar" Mode="In" />
-    <Parameter Name="Image" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Cinema_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CinId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CouId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Country_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CouId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="NameCo" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CouId" Type="int" Mode="In" />
-    <Parameter Name="NameCo" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Country_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CouId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_ChangePass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="Pass" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_CheckLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="Pass" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Customer_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="Password" Type="varchar" Mode="In" />
-    <Parameter Name="CreditCard" Type="int" Mode="In" />
-    <Parameter Name="FullName" Type="varchar" Mode="In" />
-    <Parameter Name="Bod" Type="datetime" Mode="In" />
-    <Parameter Name="Address" Type="varchar" Mode="In" />
-    <Parameter Name="Phone" Type="varchar" Mode="In" />
-    <Parameter Name="Email" Type="varchar" Mode="In" />
-    <Parameter Name="Avata" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-    <Parameter Name="Username" Type="varchar" Mode="In" />
-    <Parameter Name="CreditCard" Type="int" Mode="In" />
-    <Parameter Name="FullName" Type="varchar" Mode="In" />
-    <Parameter Name="Bod" Type="datetime" Mode="In" />
-    <Parameter Name="Address" Type="varchar" Mode="In" />
-    <Parameter Name="Phone" Type="varchar" Mode="In" />
-    <Parameter Name="Email" Type="varchar" Mode="In" />
-    <Parameter Name="Avata" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Customer_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CusId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FeeId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Feedback_GetByFilId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FeeId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="Avata" Type="nvarchar" Mode="In" />
-    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Comment" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Feedback_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FeeId" Type="int" Mode="In" />
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="Avata" Type="nvarchar" Mode="In" />
-    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Comment" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Film_GetByCouId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CouId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_GetByTypId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-    <Parameter Name="CouId" Type="int" Mode="In" />
-    <Parameter Name="NameF" Type="varchar" Mode="In" />
-    <Parameter Name="Director" Type="varchar" Mode="In" />
-    <Parameter Name="Actor" Type="varchar" Mode="In" />
-    <Parameter Name="Duration" Type="int" Mode="In" />
-    <Parameter Name="Description" Type="ntext" Mode="In" />
-    <Parameter Name="Detail" Type="ntext" Mode="In" />
-    <Parameter Name="Picture" Type="varchar" Mode="In" />
-    <Parameter Name="PictureBig" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="TypId" Type="int" Mode="In" />
-    <Parameter Name="CouId" Type="int" Mode="In" />
-    <Parameter Name="NameF" Type="varchar" Mode="In" />
-    <Parameter Name="Director" Type="varchar" Mode="In" />
-    <Parameter Name="Actor" Type="varchar" Mode="In" />
-    <Parameter Name="Duration" Type="int" Mode="In" />
-    <Parameter Name="Description" Type="ntext" Mode="In" />
-    <Parameter Name="Detail" Type="ntext" Mode="In" />
-    <Parameter Name="Picture" Type="varchar" Mode="In" />
-    <Parameter Name="PictureBig" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Film_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_ShowTimes_GetByCinId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CinId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetByFilId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetByTop1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_GetByTop2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="CinId" Type="int" Mode="In" />
-    <Parameter Name="ShowTime" Type="datetime" Mode="In" />
-    <Parameter Name="Time" Type="time" Mode="In" />
-    <Parameter Name="Price" Type="float" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="CinId" Type="int" Mode="In" />
-    <Parameter Name="ShowTime" Type="datetime" Mode="In" />
-    <Parameter Name="Time" Type="time" Mode="In" />
-    <Parameter Name="Price" Type="float" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Update_Price" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-    <Parameter Name="Price" Type="float" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ShoId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_ShowTimes_Update_View" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SliId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_Slide_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SliId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="Image" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SliId" Type="int" Mode="In" />
-    <Parameter Name="FilId" Type="int" Mode="In" />
-    <Parameter Name="Image" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_Slide_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SliId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_TypeFilm_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_GetByTop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Top" Type="nvarchar" Mode="In" />
-    <Parameter Name="Where" Type="nvarchar" Mode="In" />
-    <Parameter Name="Order" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="NameT" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-    <Parameter Name="NameT" Type="varchar" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_TypeFilm_Update_Status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TypId" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BookingTicketModelStoreContainer">
     <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
@@ -726,6 +371,7 @@
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ShowTimes" EntityType="Self.ShowTimes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

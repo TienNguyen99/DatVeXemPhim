@@ -29,6 +29,7 @@ namespace DatVeXemPhim.Areas.Admin.Models
         public string Director { get; set; }
         public string Actor { get; set; }
         public Nullable<int> Duration { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
         public string Picture { get; set; }

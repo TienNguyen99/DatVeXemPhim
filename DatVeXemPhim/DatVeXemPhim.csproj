@@ -231,103 +231,13 @@
     <Compile Include="Areas\Admin\Models\Film.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Models\Order.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Models\ShowTime.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\Slide.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Admin_CheckLogin_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Admin_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Admin_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Booking_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Booking_GetByCusId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Booking_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Booking_GetByShoId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Cinema_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Cinema_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Country_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Country_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Customer_CheckLogin_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Customer_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Customer_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Feedback_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Feedback_GetByFilId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Feedback_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Film_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Film_GetByCouId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Film_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Film_GetByTypId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByCinId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetByFilId_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_ShowTimes_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Slide_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_Slide_GetById_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_TypeFilm_GetByAll_Result.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\sp_TypeFilm_GetById_Result.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Models\sysdiagram.cs">
@@ -336,18 +246,29 @@
     <Compile Include="Areas\Admin\Models\TypeFilm.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RapController.cs" />
+    <Compile Include="Controllers\RapDetailController.cs" />
+    <Compile Include="Controllers\UserDangKyController.cs" />
+    <Compile Include="Dao\BookingDao.cs" />
+    <Compile Include="Dao\CinemaDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\SlideDao.cs" />
+    <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Dangky.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -365,6 +286,47 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -445,13 +407,6 @@
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\LoginAd\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAd\Index.cshtml" />
-    <EntityDeploy Include="Areas\Admin\Models\AdminModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AdminModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\Admin\Models\AdminModel.edmx.diagram">
-      <DependentUpon>AdminModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Cinemas\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Cinemas\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Cinemas\Details.cshtml" />
@@ -492,10 +447,20 @@
     <Content Include="Areas\Admin\Views\Films\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Index.cshtml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <EntityDeploy Include="Areas\Admin\Models\AdminModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdminModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Admin\Models\AdminModel.edmx.diagram">
+      <DependentUpon>AdminModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -534,6 +499,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
+    <Content Include="Views\UserDangKy\Register.cshtml" />
+    <Content Include="Views\UserDangKy\Login.cshtml" />
+    <Content Include="Views\Booking\LichChieu.cshtml" />
+    <Content Include="Views\RapDetail\ChiTietRap.cshtml" />
+    <Content Include="Views\Rap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -554,7 +524,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

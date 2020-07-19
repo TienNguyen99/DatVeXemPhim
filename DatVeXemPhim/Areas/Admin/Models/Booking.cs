@@ -19,6 +19,7 @@ namespace DatVeXemPhim.Areas.Admin.Models
         public Nullable<int> ShoId { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<double> Bilmoney { get; set; }
+        public Nullable<int> ChoNgoi { get; set; }
         public Nullable<System.DateTime> DateBooking { get; set; }
         public string Status { get; set; }
     

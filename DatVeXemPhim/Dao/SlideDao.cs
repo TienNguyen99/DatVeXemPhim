@@ -8,10 +8,10 @@ namespace DatVeXemPhim.Dao
     
     public class SlideDao
     {
-        BookingTicketEntities1 db = null;
+        BookingTicketEntities2 db = null;
         public SlideDao()
         {
-            db = new BookingTicketEntities1();
+            db = new BookingTicketEntities2();
 
         }
         public List<Slide> ListAll()

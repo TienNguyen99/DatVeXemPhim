@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Lịch Chiếu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var raps = (List<DatVeXemPhim.Areas.Admin.Models.Cinema>)ViewBag.Raps;
+    var shows = (List<DatVeXemPhim.Areas.Admin.Models.ShowTime>)ViewBag.Shows;
+    var idphim = (DatVeXemPhim.Areas.Admin.Models.Film)ViewBag.Category;
+}
+
+<div class="container">
+    <hr />
+    <h2 class="d-flex justify-content-center">
+        @idphim.NameF
+    </h2>
+    <hr class="divider" />
+    <h4>
+        CHỌN RẠP CHIẾU PHIM
+    </h4>
+    <hr class="divider" />
+    <nav class="nav-divider">
+        @foreach (var item in raps)
+        {
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="materialInline1" name="inlineMaterialRadiosExample">
+                <label class="form-check-label" for="materialInline1">@item.NameCi</label>
+            </div>
+        }
+
+    </nav>
+    <hr />
+    <hr class="divider" />
+    <h4>
+        CHỌN NGÀY CHIẾU
+    </h4>
+    <hr class="divider" />
+    <nav class="nav-divider">
+        @foreach (var item in shows)
+        {
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="materialInline2" name="inlineMaterialRadiosExample">
+                <label class="form-check-label" for="materialInline2">@item.ShowTime1</label>
+            </div>
+        }
+
+    </nav>
+    <hr />
+    <hr class="divider" />
+    <h4>
+        CHỌN GIỜ CHIẾU
+    </h4>
+    <hr class="divider" />
+    <nav class="nav-divider">
+        @foreach (var item in shows)
+        {
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="materialInline3" name="inlineMaterialRadiosExample">
+                <label class="form-check-label" for="materialInline3">@item.Time</label>
+            </div>
+        }
+
+    </nav>
+    <hr />
+    <!-- Material inline 1 -->
+
+
+
+</div>
+
